@@ -16,11 +16,15 @@ const mcuProjects = [
 /*-- cached elements --*/
 
 const checkboxes = document.querySelector('.checkboxes'); 
+const resultsButton = document.getElementById('results');
+const resultsMessage = document.getElementById('results-message');
 
 
 /*-- event listeners --*/
 
-
+resultsButton.addEventListener('click', () => {
+    calculateResults();
+});
 /*-- functions --*/
 
 render();
@@ -44,3 +48,15 @@ function listProjects() {
         checkboxes.appendChild(br);
     });
 }
+
+function calculateResults() {
+    const totalCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkCount = Array.from(totalCheckboxes).filter((checkbox) => checkbox.checked).length;
+    const totalCount = totalCheckboxes.length;
+    const percentage = (checkCount / totalCount) * 100;
+    resultsMessage.innerText = `You have watched ${percentage}% of the MCU!`;
+}; 
+
+// event listner + math for results button 
+// reset button 
+// share results ??? 
