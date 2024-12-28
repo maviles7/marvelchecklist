@@ -78,7 +78,7 @@ function calculateResults() {
     const totalCheckboxes = document.querySelectorAll('input[type="checkbox"]');
     const checkCount = Array.from(totalCheckboxes).filter((checkbox) => checkbox.checked).length;
     const totalCount = totalCheckboxes.length;
-    const percentage = (checkCount / totalCount) * 100;
+    const percentage = Math.ceil((checkCount / totalCount) * 100);
     resultsMessage.innerText = `You have watched ${percentage}% of the MCU!`;
 }; 
 
