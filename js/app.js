@@ -1,6 +1,6 @@
 /*-- constants --*/
 
-const mcuProjects = [
+const mcuMovies = [
     "Ironman",
     "The Incredible Hulk",
     "Ironman 2",
@@ -11,7 +11,32 @@ const mcuProjects = [
     "Thor: The Dark World",
     "Captain America: The Winter Soldier",
     "Guardians of the Galaxy",
-]
+    "Avengers: Age of Ultron",
+    "Antman",
+    "Captain America: Civil War",
+    "Doctor Strange",
+    "Guardians of the Galaxy Vol. 2",
+    "Spiderman: Homecoming",
+    "Thor: Ragnarok",
+    "Black Panther",
+    "Avengers: Infinity War",
+    "Antman and The Wasp",
+    "Captain Marvel",
+    "Avengers: Endgame",
+    "Spiderman: Far From Home", 
+    "Black Widow",
+    "Eternals",
+    "Shang-Chi and the Legend of the Ten Rings",
+    "Eternals",
+    "Spiderman: No Way Home",
+    "Doctor Strange in the Multiverse of Madness",
+    "Thor: Love and Thunder",
+    "Black Panther: Wakanda Forever",
+    "Antman and The Wasp: Quantumania",
+    "Guardians of the Galaxy Vol. 3",
+    "The Marvels",
+    "Deadpool & Wolverine",
+];
 
 /*-- cached elements --*/
 
@@ -34,7 +59,7 @@ function render() {
 };
 
 function listProjects() {
-    mcuProjects.forEach((project) => {
+    mcuMovies.forEach((project) => {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkboxes.appendChild(checkbox);
@@ -57,6 +82,6 @@ function calculateResults() {
     resultsMessage.innerText = `You have watched ${percentage}% of the MCU!`;
 }; 
 
-// event listner + math for results button 
 // reset button 
+// MARVEL API w/full archive 
 // share results ??? 
