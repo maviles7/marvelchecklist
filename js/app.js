@@ -41,15 +41,22 @@ const mcuMovies = [
 /*-- cached elements --*/
 
 const checkboxes = document.querySelector('.checkboxes'); 
+
 const resultsButton = document.getElementById('results');
 const resultsMessage = document.getElementById('results-message');
 
+const resetButton = document.getElementById('reset');
 
 /*-- event listeners --*/
 
 resultsButton.addEventListener('click', () => {
     calculateResults();
 });
+
+resetButton.addEventListener('click', () => {
+    resetCheckboxes();
+});
+
 /*-- functions --*/
 
 render();
@@ -82,6 +89,14 @@ function calculateResults() {
     resultsMessage.innerText = `You have watched ${percentage}% of the MCU!`;
 }; 
 
-// reset button 
-// MARVEL API w/full archive 
+function resetCheckboxes() {
+    const totalCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    totalCheckboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+    });
+    resultsMessage.innerText = '';
+};
+
+
 // share results ??? 
+// TV shows 
